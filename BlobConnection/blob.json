@@ -1,0 +1,73 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "connections_azureblob_srini_name": {
+            "defaultValue": "azureblob-srini",
+            "type": "String"
+        },
+        "location": {
+            "type": "string",
+            "metadata": {
+                "description": "location name"
+            }
+        },
+        "displayName": {
+            "type": "string",
+            "metadata": {
+                "description": "Display name"
+            }
+        },
+        "sub-id":{
+            "type":"string",
+            "metadata": {
+                "description": "SubscriptionID"
+            }
+        },
+        "RG": {
+            "type": "string",
+            "metadata": {
+                "description": "Resource Group Name"
+            }
+        }
+    },
+    "functions": [],
+    "variables": {},
+    "resources": [
+        {
+            "apiVersion": "2019-04-01",
+            "kind":"V1",
+            "name": "[parameters('connections_azureblob_srini_name')]"
+            "type":"Microsoft.Web/connections",
+            "location":"[parameters('location')]",
+            "properties":{
+                "displayName":"[parameters('displayName')]",
+                "statuses":[
+                    {
+                        "status":"Connected"
+                    }
+                ],"
+                parameterValueSet":{},
+                "customParameterValues":{},
+            "api":{
+                    "name":"azureblob",
+                    "displayName":"Azure Blob Storage",
+                    "description":"Microsoft Azure Storage provides a massively scalable, durable, and highly available storage for data on the cloud, and serves as the data storage solution for modern applications. 
+                    Connect to Blob Storage to perform various operations such as create, update, get and delete on blobs in your Azure Storage account.",
+                    "iconUri":"https://connectoricons-prod.azureedge.net/releases/v1.0.1586/1.0.1586.2912/azureblob/icon.png",
+                    "brandColor":"#804998",
+                    "category":"Standard",
+                    "id":"[concat('/subscriptions/', parameters('sub-id'),'/providers/Microsoft.Web/locations/',parameters('location'),'/managedApis/azureblob')]",
+                    "type":"Microsoft.Web/locations/managedApis"
+                },
+                "testLinks":[
+                    {
+                        "requestUri":"[concat('https://management.azure.com:443/subscriptions/',parameters('sub-id'),'/resourceGroups/',parameters('RG'),'/providers/Microsoft.Web/connections/',parameters('connections_azureblob_srini_name'),'extensions/proxy/testconnection?api-version=2018-07-01-preview')]",
+                        "method":"get"
+                        }
+                    ]
+            }
+        }
+    ],
+    "outputs": {}
+}

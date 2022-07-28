@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "connections_azureblob_srini_name": {
+            "value": "srini-blob-dev"
+        },
+        "location": {
+            "value": "eastus"
+        },
+        "displayName": {
+            "value": "DisplayName-Dev"
+        },
+        "sub-id":{
+            "value": "beb2107a-2219-488b-929e-7939bb20b9a2"
+        },
+        "RG":{
+            "value": "RG-Development"
+        }
+    }
+}
