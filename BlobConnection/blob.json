@@ -35,7 +35,7 @@
     "variables": {},
     "resources": [
         {
-            "apiVersion": "2019-04-01",
+            "apiVersion": "2016-06-01",
             "kind":"V1",
             "name": "[parameters('connections_azureblob_srini_name')]",
             "type":"Microsoft.Web/connections",
