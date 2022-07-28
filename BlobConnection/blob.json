@@ -29,6 +29,9 @@
             "metadata": {
                 "description": "Resource Group Name"
             }
+        },
+        "access-key":{
+            "type":"string"
         }
     },
     "functions": [],
@@ -47,7 +50,13 @@
                         "status":"Connected"
                     }
                 ],"
-                parameterValueSet":{},
+                parameterValueSet":{
+                    "name":"keybasedAuth",
+                    "vaules":{
+                        "accountName":{ "value": "65storage"},
+                        "accessKey":{"value":"[parameters('access-key')]"}
+                    }
+                },
                 "customParameterValues":{},
             "api":{
                     "name":"azureblob",
