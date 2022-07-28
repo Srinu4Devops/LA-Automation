@@ -37,7 +37,7 @@
         {
             "apiVersion": "2019-04-01",
             "kind":"V1",
-            "name": "[parameters('connections_azureblob_srini_name')]"
+            "name": "[parameters('connections_azureblob_srini_name')]",
             "type":"Microsoft.Web/connections",
             "location":"[parameters('location')]",
             "properties":{
