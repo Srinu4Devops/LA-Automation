@@ -20,7 +20,7 @@
         "access-key": {
             "reference": {
                 "keyVault": {
-                    "id": "[concat('/subscriptions/', parameters('sub-id'),'/resourceGroups/',parameters('RG'),'/providers/Microsoft.keyVault/vaults/Auth-store']"
+                    "id":"/subscriptions/beb2107a-2219-488b-929e-7939bb20b9a2/resourceGroups/RG/providers/Microsoft.keyVault/vaults/Auth-store"
 
                 },
                 "secretName": "auth"
